@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "din";
+  src: url("../fonts/SFUDINEngAlt.woff2") format("woff2"),
+    url("../fonts/SFUDINEngAlt.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "din_b";
+  src: url("../fonts/DINCondensed-Bold.woff2") format("woff2"),
+    url("../fonts/DINCondensed-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "din_l";
+  src: url("../fonts/SFUDINLight.woff2") format("woff2"),
+    url("../fonts/SFUDINLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "avo";
+  src: url("../fonts/UTMAvo.woff2") format("woff2"),
+    url("../fonts/UTMAvo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "avo_b";
+  src: url("../fonts/UTMAvoBold.woff2") format("woff2"),
+    url("../fonts/UTMAvoBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
