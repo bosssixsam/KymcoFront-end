@@ -1,0 +1,89 @@
+section {
+  padding-top: 100px;
+  @include mobile {
+    padding-top: 50px;
+  }
+}
+
+a {
+  color: $text-cl;
+  text-decoration: none;
+  display: block;
+  font-family: $avo;
+  font-size: 16px;
+}
+h2 {
+  font-family: $din;
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+h3 {
+  font-family: $din;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+h4 {
+  font-family: $avo;
+  font-size: 22px;
+}
+
+p {
+  font-family: $avo;
+}
+
+img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+strong {
+  font-family: bb;
+}
+
+.-lv1 {
+  @include text(100px, b, 100px, $white-cl, none);
+  font-weight: normal;
+  margin: 0;
+  a {
+    @include text(100px, g, 100px, $white-cl, none);
+  }
+  @include tablet {
+  }
+  @include mobile {
+  }
+}
+
+.btn {
+  color: $white-cl;
+  background-color: $red;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+}
+
+.btn_round {
+  font-family: $din;
+  color: $white-cl;
+  background-color: $red;
+  border-radius: 50px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover;
+  }
+
+  &.--lg {
+    width: 345px;
+    height: 60px;
+    font-size: 25px;
+    padding-top: 12px;
+    text-transform: uppercase;
+  }
+}
