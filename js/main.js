@@ -1,15 +1,22 @@
 //-- header mobile ---
 const header = document.querySelector("header");
-
 const burger = document.querySelector(".burger");
 const navm = document.querySelector(".nav-mobile");
+let state = false;
+console.log(header.classList.contains("active"));
 
 burger.addEventListener("click", () => {
-  console.log("click");
-
+  // console.log("click");
   header.classList.toggle("active");
   burger.classList.toggle("active");
-  navm.classList.toggle("active");
+
+  // if (header.style.backgroundColor === "transparent") {
+  //   // console.log("hello");
+  //   header.style.backgroundColor = "#f4352c";
+  // } else {
+  //   header.style.backgroundColor = "transparent";
+  // }
+  // navm.classList.toggle("active");
   window.document.body.classList.toggle("open_menu_mobile");
 });
 
@@ -25,6 +32,7 @@ const regis_btn = document.querySelector(".customer-helper .regis");
 window.addEventListener("scroll", () => {
   let top = document.querySelector("html").scrollTop;
   if (top > topslider.offsetHeight - header.offsetHeight) {
+    // state = true;
     header.style.backgroundColor = "#f4352c";
     store_btn.style.border = "1.5px solid #ffffff";
     regis_btn.style.border = "1.5px solid #ffffff";
@@ -32,6 +40,7 @@ window.addEventListener("scroll", () => {
     header.style.backgroundColor = "transparent";
     store_btn.style.border = "none";
     regis_btn.style.border = "none";
+    // state = false;
   }
 });
 
@@ -44,7 +53,7 @@ const flkty = new Flickity(slider, {
   draggable: true,
   pageDots: false,
   prevNextButtons: false,
-  autoPlay: 1800,
+  autoPlay: 2000,
   on: {
     change: function (index) {
       // console.log(index);

@@ -11,6 +11,9 @@ a {
   display: block;
   font-family: $avo;
   font-size: 16px;
+  &:focus {
+    outline: none;
+  }
 }
 h2 {
   font-family: $din;
