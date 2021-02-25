@@ -3,20 +3,19 @@ const header = document.querySelector("header");
 const burger = document.querySelector(".burger");
 const navm = document.querySelector(".nav-mobile");
 let state = false;
-console.log(header.classList.contains("active"));
 
 burger.addEventListener("click", () => {
-  // console.log("click");
+  let top = document.querySelector("html").scrollTop;
   header.classList.toggle("active");
   burger.classList.toggle("active");
+  navm.classList.toggle("active");
 
-  // if (header.style.backgroundColor === "transparent") {
-  //   // console.log("hello");
-  //   header.style.backgroundColor = "#f4352c";
-  // } else {
-  //   header.style.backgroundColor = "transparent";
-  // }
-  // navm.classList.toggle("active");
+  if (header.classList.contains("active")) {
+    header.style.backgroundColor = "#f4352c";
+  } else if (top <= topslider.offsetHeight - header.offsetHeight) {
+    header.style.backgroundColor = "transparent";
+  }
+
   window.document.body.classList.toggle("open_menu_mobile");
 });
 

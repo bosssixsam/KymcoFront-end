@@ -1,262 +1,3 @@
-// header {
-//   width: 100vw;
-//   height: 94px;
-//   // background-color: red;
-//   background-color: transparent;
-//   position: fixed;
-//   top: 0;
-//   z-index: 202;
-//   transition: all 0.3s ease-in-out;
-
-//   &.active {
-//     background: #f4352c;
-//   }
-
-//   .container-fluid {
-//     @include midflex;
-//     justify-content: space-between;
-//     height: 100%;
-//     .logo {
-//       width: 250px;
-//       height: 38px;
-//       position: relative;
-//       z-index: 202;
-//       img {
-//         position: absolute;
-//         object-fit: cover;
-//       }
-//     }
-
-//     nav {
-//       display: flex;
-//       margin-left: -50px;
-//       margin-right: -50px;
-
-//       a {
-//         color: $white-cl;
-//         cursor: pointer;
-//         padding: 0 50px;
-//         text-transform: uppercase;
-//       }
-//     }
-
-//     .customer-helper {
-//       display: flex;
-//       .search-container {
-//         margin-right: 15px;
-//         .icon-container {
-//           width: 30px;
-//           height: 30px;
-//           position: relative;
-//           cursor: pointer;
-//           img {
-//             position: absolute;
-//           }
-//         }
-//       }
-
-//       .store {
-//         margin-right: 15px;
-//         width: 100px;
-//         height: 27px;
-//       }
-
-//       .regis {
-//         width: 230px;
-//         height: 27px;
-//       }
-//     }
-
-//     .burger {
-//       display: none;
-//       margin-top: 5px;
-//       width: 35px;
-//       height: 40px;
-//       cursor: pointer;
-//       z-index: 202;
-//       transition: all 0.5s ease-out;
-//       span {
-//         width: 100%;
-//         height: 2px;
-//         background-color: $white-cl;
-//         margin-bottom: 9px;
-//         transition: all 0.3s ease-out;
-//       }
-
-//       &.active {
-//         .line-top {
-//           transform: rotate(-45deg);
-//           margin-top: 12px;
-//           margin-bottom: 0px;
-//         }
-//         .line-mid {
-//           opacity: 0;
-//         }
-
-//         .line-bottom {
-//           transform: rotate(45deg);
-//           margin-top: -12px;
-//         }
-//       }
-//     }
-
-//     .nav-mobile {
-//       display: none;
-//       position: absolute;
-//       background-color: #f4352c;
-//       width: 100vw;
-//       height: calc(100vh - 94px);
-//       top: 94px;
-//       left: 0;
-//       z-index: 200;
-//       transform: translateY(-1200px);
-//       transition: all 0.5s ease-in;
-//       overflow-y: scroll;
-
-//       &.active {
-//         transform: translateY(0);
-//       }
-
-//       nav {
-//         @include midflex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//         height: 176px;
-//         padding-top: 20px;
-//         border-top: 3px solid $white-cl;
-
-//         a {
-//           font-family: $din;
-//           font-size: 24px;
-//           text-transform: uppercase;
-//         }
-//       }
-
-//       .customer-btns {
-//         width: 100%;
-//         margin-top: 20px;
-
-//         .btn {
-//           width: 100%;
-//           padding: 20px 0 10px;
-//           border-top: 3px solid $white-cl;
-//           border-bottom: 3px solid $white-cl;
-//           border-collapse: collapse;
-//           border-radius: 0;
-//           margin-top: -4px;
-//           a {
-//             font-family: $din;
-//             font-size: 24px;
-//             text-transform: uppercase;
-//             color: $white-cl;
-//           }
-//         }
-//       }
-
-//       .search {
-//         background-color: $white-cl;
-//         width: 269px;
-//         height: 33px;
-//         padding: 0 10px;
-//         @include midflex;
-//         justify-content: space-between;
-//         margin: 24px auto 20px;
-//         border-radius: 50px;
-
-//         input {
-//           width: 205px;
-//           background: none;
-//           border: none;
-//           font-family: $avo;
-//           &:focus {
-//             outline: none;
-//           }
-//         }
-
-//         .icon-container {
-//           width: 33px;
-//           height: 28px;
-//           position: relative;
-//           overflow: hidden;
-
-//           img {
-//             position: absolute;
-//             width: 100%;
-//             height: 100%;
-//           }
-//         }
-//       }
-//     }
-
-//     @include desktop {
-//       nav {
-//         margin-left: -10px;
-//         margin-right: -10px;
-//         a {
-//           padding: 0 10px;
-//         }
-//       }
-//     }
-
-//     @include tablet {
-//       .logo {
-//         margin: auto;
-//       }
-
-//       nav {
-//         display: none;
-//       }
-
-//       .customer-helper {
-//         display: none;
-//       }
-
-//       .burger {
-//         display: flex;
-//         flex-direction: column;
-//       }
-
-//       .nav-mobile {
-//         display: block;
-//       }
-//     }
-
-//     @include mobile {
-//       .logo {
-//         margin: auto;
-//       }
-
-//       nav {
-//         display: none;
-//       }
-
-//       .customer-helper {
-//         display: none;
-//       }
-
-//       .burger {
-//         display: flex;
-//         flex-direction: column;
-//       }
-
-//       .nav-mobile {
-//         display: block;
-//         transform: translateY(-850px);
-//       }
-//     }
-//   }
-// }
-
-// // @media screen and (max-width: 375px) and (min-height: 700px) {
-// //   header {
-// //     .container-fluid {
-// //       .nav-mobile {
-// //         transform: translateY(-815px);
-// //       }
-// //     }
-// //   }
-// // }
-
 header {
   width: 100%;
   height: 94px;
@@ -265,6 +6,11 @@ header {
   position: fixed;
   top: 0;
   z-index: 200;
+
+  @media screen and (max-width: 1120px) {
+    height: 60px;
+  }
+
   .container-fluid {
     height: 100%;
     @include midflex;
@@ -335,7 +81,7 @@ header {
       width: 35px;
       height: 20px;
       cursor: pointer;
-      z-index: 205;
+      z-index: 204;
       // border: 2px solid black;
       // transition: all 0.5s ease-out;
       // background-color: black;
@@ -365,6 +111,77 @@ header {
 
     // --- Nav Mobile ---
 
+    .nav-mobile {
+      display: none;
+      z-index: 202;
+
+      .logo {
+        padding: 15px 0;
+      }
+
+      nav {
+        border-top: 2px solid $white-cl;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 25px;
+        a {
+          font-family: $din;
+          text-transform: uppercase;
+          color: $white-cl;
+          letter-spacing: -0.25px;
+          font-size: 24px;
+          padding-bottom: 25px;
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 36px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $white-cl;
+            transform: scaleX(0);
+            transform-origin: center left;
+            transition: all 0.5s ease-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+
+      .customer-btns {
+        width: 100vw;
+        .btn {
+          width: 100%;
+          border-top: 2px solid $white-cl;
+          // border-bottom: 2px solid $white-cl;
+          // border-collapse: collapse;
+          border-radius: 0;
+
+          &.--bottomborder {
+            border-bottom: 2px solid $white-cl;
+          }
+
+          a {
+            padding: 15px 0 10px;
+            font-family: $din;
+            color: $white-cl;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    // --- Nav Mobile ---
+
     @media screen and (max-width: 1120px) {
       .customer-helper,
       .navigation {
@@ -375,6 +192,31 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+      }
+
+      .nav-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: $red;
+        left: 0;
+        top: 0;
+        overflow-y: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        transform: translateY(-100%);
+        transition: all 0.5s ease-out;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        &.active {
+          transform: translateY(0);
+        }
       }
     }
   }
