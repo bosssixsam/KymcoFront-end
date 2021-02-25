@@ -133,4 +133,8 @@
       }
     }
   }
+
+  @include mobile_landscape {
+    height: 80vh;
+  }
 }
