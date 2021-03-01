@@ -52,6 +52,7 @@ const flkty = new Flickity(slider, {
   draggable: true,
   pageDots: false,
   prevNextButtons: false,
+  imagesLoaded: true,
   autoPlay: 2000,
   on: {
     change: function (index) {
@@ -72,7 +73,7 @@ const missionSlider = new Flickity(mission, {
   draggable: true,
   pageDots: false,
   prevNextButtons: false,
-  autoPlay: 2000,
+  autoPlay: 2500,
   on: {
     change: function (index) {
       // console.log(index);
@@ -94,7 +95,7 @@ pre.addEventListener("click", function () {
 // $(".mission__content-item").eq(index).addClass("active");
 
 //-- Hot ---
-// const hot = document.querySelector(".hot__slider-container");
+const hot = document.querySelector(".hot__slider-container");
 
 // const hotSlider = new Flickity(hot, {
 //   wrapAround: true,
@@ -102,3 +103,39 @@ pre.addEventListener("click", function () {
 //   pageDots: false,
 //   prevNextButtons: false,
 // });
+
+window.addEventListener("load", () => {
+  // console.log("ok");
+  if (window.matchMedia("(max-width: 992px)").matches) {
+    hot.classList.add("activeSlide");
+
+    const hotSlider = new Flickity(hot, {
+      wrapAround: true,
+      // freeScroll: true,
+      pageDots: false,
+      prevNextButtons: false,
+    });
+  } else {
+    hot.classList.remove("activeSlide");
+    const hotSlider = new Flickity(hot);
+    hotSlider.destroy();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(max-width: 992px)").matches) {
+    // console.log("hello");
+    // hotSlider = new Flickity(hot);
+    hot.classList.add("activeSlide");
+    const hotSlider = new Flickity(hot, {
+      wrapAround: true,
+      // freeScroll: true,
+      pageDots: false,
+      prevNextButtons: false,
+    });
+  } else {
+    hot.classList.remove("activeSlide");
+    const hotSlider = new Flickity(hot);
+    hotSlider.destroy();
+  }
+});

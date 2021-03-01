@@ -3,16 +3,16 @@
 .slider {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  // height: 100vh;
+  // overflow: hidden;
   .slider-container {
-    position: absolute;
+    // position: absolute;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     .slider-item {
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       top: 0;
       left: 0;
       img {
@@ -95,7 +95,11 @@
   }
 
   @include mobile {
-    height: 60vh;
+    .slider-container {
+      .slider-item {
+        height: 60vh;
+      }
+    }
 
     .content {
       left: 10px;
@@ -135,6 +139,10 @@
   }
 
   @include mobile_landscape {
-    height: 80vh;
+    .slider-container {
+      .slider-item {
+        height: 80vh;
+      }
+    }
   }
 }
