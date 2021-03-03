@@ -19,7 +19,7 @@ h2 {
   font-family: $din;
   font-size: 60px;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 0.4px;
 }
 
 h3 {
@@ -84,9 +84,11 @@ strong {
 
   &.--lg {
     width: 345px;
-    height: 60px;
+    // height: 60px;
     font-size: 25px;
-    padding-top: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-transform: uppercase;
+    border-radius: 20px;
   }
 }
