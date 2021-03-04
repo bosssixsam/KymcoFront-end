@@ -568,6 +568,13 @@
         flex-direction: column;
         .news__card {
           margin-bottom: 40px;
+          width: 100%;
+
+          .card__title {
+            h3 {
+              font-size: 30px;
+            }
+          }
         }
       }
     }

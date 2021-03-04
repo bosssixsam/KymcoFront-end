@@ -74,5 +74,25 @@ footer {
         font-family: $avo;
       }
     }
+
+    // -- Responsive ---
+
+    @include mobile {
+      h3 {
+        font-size: 24px;
+      }
+
+      .footer-nav {
+        a {
+          font-size: 12px;
+        }
+      }
+
+      .info-copyRight {
+        span {
+          font-size: 10px;
+        }
+      }
+    }
   }
 }
