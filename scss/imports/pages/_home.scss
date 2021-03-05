@@ -573,8 +573,15 @@
           .card__title {
             h3 {
               font-size: 30px;
+              height: 85px;
             }
           }
+        }
+      }
+
+      .btn_round {
+        &.--lg {
+          margin: 40px auto 0;
         }
       }
     }

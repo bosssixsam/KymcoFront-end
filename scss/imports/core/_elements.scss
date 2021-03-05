@@ -90,5 +90,9 @@ strong {
     padding-bottom: 15px;
     text-transform: uppercase;
     border-radius: 20px;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 }
