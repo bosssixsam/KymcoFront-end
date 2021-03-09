@@ -1,5 +1,5 @@
 .banner {
-  height: 50vh;
+  height: 70vh;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.25) 0%,
@@ -41,24 +41,120 @@
 
   &__items {
     &-card {
+      position: relative;
+      margin-top: 100px;
       display: flex;
-      border: 2px solid black;
+      // border: 2px solid black;
+
+      &::after {
+        content: "";
+        -ms-transform: skewX(-10deg);
+        transform: skewX(-10deg);
+        width: 100%;
+        height: 90%;
+        background-color: #f8f8f8;
+        position: absolute;
+        top: 0;
+        right: -30px;
+        z-index: 0;
+      }
 
       .img-container {
-        width: 40%;
-        background-color: blue;
-        -ms-transform: skewX(-20deg);
-        transform: skewX(-20deg);
+        width: 50%;
+        // background-color: blue;
+        height: 560px;
+        z-index: 10;
 
-        // img {
-        //   width: 100%;
-        //   height: auto;
-        //   object-fit: cover;
-        // }
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          margin-left: -60px;
+          z-index: 10;
+        }
       }
 
       .products-content {
-        width: 60%;
+        width: 50%;
+        z-index: 10;
+        // padding: 0 30px;
+
+        &__title {
+          h2 {
+            font-style: italic;
+            width: 70%;
+          }
+          p {
+            font-size: 18px;
+            font-style: italic;
+            width: 85%;
+          }
+        }
+
+        &__items {
+          margin-top: 40px;
+          display: flex;
+          .item {
+            margin-right: 30px;
+            // cursor: pointer;
+            position: relative;
+            h5 {
+              font-size: 22px;
+              white-space: nowrap;
+            }
+
+            .price {
+              padding-left: 12px;
+              border-left: 3px solid $black-cl;
+              span {
+                font-family: $din;
+                font-size: 15px;
+                text-transform: uppercase;
+              }
+              h5 {
+                font-size: 30px;
+              }
+            }
+
+            .btn-group {
+              display: none;
+              position: absolute;
+              left: 0px;
+              bottom: -10px;
+              .btn_round {
+                font-size: 22px;
+                text-transform: uppercase;
+                padding: 10px 30px;
+                margin-bottom: 15px;
+                white-space: nowrap;
+              }
+            }
+
+            // -- item hover ---
+
+            &:hover {
+              .btn-group {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      // -- card reverse ---
+
+      &.--reverse {
+        flex-direction: row-reverse;
+
+        &::after {
+          right: 40px;
+        }
+
+        .img-container {
+          img {
+            margin-left: 60px;
+          }
+        }
       }
     }
   }
