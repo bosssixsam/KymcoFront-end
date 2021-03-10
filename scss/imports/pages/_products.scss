@@ -15,6 +15,7 @@
 }
 
 .products {
+  padding-bottom: 100px;
   &__navigation {
     span {
       font-family: $din;
@@ -40,6 +41,7 @@
   // -- products items ---
 
   &__items {
+    display: none;
     &-card {
       position: relative;
       margin-top: 100px;
@@ -153,6 +155,60 @@
         .img-container {
           img {
             margin-left: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  // -- product choose ---
+
+  &__choose {
+    padding-top: 50px;
+    &-title {
+      text-align: center;
+      p {
+        font-size: 22px;
+      }
+    }
+
+    &-content {
+      padding-top: 100px;
+      .type {
+        display: flex;
+        justify-content: space-between;
+        &__item {
+          @include midflex;
+
+          justify-content: space-between;
+
+          h3 {
+            text-transform: uppercase;
+            font-size: 30px;
+          }
+          &-tab {
+            margin: 0 15px;
+            width: 105px;
+            height: 105px;
+            border: 1px solid $black-cl;
+            position: relative;
+
+            .icon {
+              img {
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+            }
+            h5 {
+              white-space: nowrap;
+              font-size: 18px;
+              position: absolute;
+              bottom: 15px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
           }
         }
       }
