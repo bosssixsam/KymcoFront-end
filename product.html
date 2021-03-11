@@ -252,7 +252,7 @@
             </div>
             <div class="products__choose-content">
               <div class="type">
-                <div class="type__item">
+                <div class="type__item list1">
                   <h3>loại xe</h3>
                   <div class="type__item-tab selected">
                     <div class="icon">
@@ -281,9 +281,9 @@
                   </div>
                 </div>
 
-                <div class="type__item">
+                <div class="type__item list2">
                   <h3>động cơ</h3>
-                  <div class="type__item-tab">
+                  <div class="type__item-tab selected">
                     <h3>bằng</h3>
                     <h2>a1</h2>
                   </div>
@@ -292,13 +292,43 @@
                     <h2>a2</h2>
                   </div>
                   <div class="type__item-tab">
-                    <h2>không</h2>
-                    <h3>cần bằng lái</h3>
+                    <h2 class="normal">không</h2>
+                    <h3 class="small">cần bằng lái</h3>
                   </div>
                 </div>
               </div>
-              <div class="price"></div>
+
+              <div class="price">
+                <div class="price__title">
+                  <h5>giá tiền</h5>
+                  <p>Tùy chọn giá tiền giữa mức tối thiểu và tối đa</p>
+                </div>
+
+                <div class="price__content">
+                  <div class="text-left">
+                    <h5>tối thiểu</h5>
+                    <h3>13.500.000 vnd</h3>
+                  </div>
+
+                  <div class="range-price">
+                    <input
+                      type="range"
+                      class="range-slider"
+                      style="display: none"
+                      value="13500000,117000000"
+                      id="input-gia"
+                    />
+                  </div>
+
+                  <div class="text-right">
+                    <h5>tối đa</h5>
+                    <h3>117.000.000 vnd</h3>
+                  </div>
+                </div>
+              </div>
+
               <div class="shape"></div>
+
               <a href="" class="btn_round"></a>
             </div>
           </div>
