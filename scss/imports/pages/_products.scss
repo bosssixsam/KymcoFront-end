@@ -42,6 +42,9 @@
 
   &__items {
     display: none;
+    &.active {
+      display: block;
+    }
     &-card {
       position: relative;
       margin-top: 100px;
@@ -96,6 +99,7 @@
         &__items {
           margin-top: 40px;
           display: flex;
+
           .item {
             margin-right: 30px;
             // cursor: pointer;
@@ -140,6 +144,22 @@
               }
             }
           }
+
+          // -- item slider ---
+
+          &.slider {
+            position: relative;
+            .flickity-viewport {
+              width: 100%;
+            }
+            .slider-item {
+              width: 150px;
+              height: 250px;
+              .btn-group {
+                bottom: 50px;
+              }
+            }
+          }
         }
       }
 
@@ -165,6 +185,12 @@
 
   &__choose {
     padding-top: 50px;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
     &-title {
       text-align: center;
       p {

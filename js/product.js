@@ -43,6 +43,33 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// -------- product navigation --------------
+
+// ---- Tab Slider -------------
+
+const tabContainer = document.querySelector(".products-content__items.slider");
+
+// console.log(tabContainer.childElementCount);
+
+if (tabContainer.childElementCount > 3) {
+  console.log("hello");
+
+  const flkty = new Flickity(tabContainer, {
+    wrapAround: true,
+    draggable: true,
+    pageDots: false,
+    prevNextButtons: false,
+    // imagesLoaded: true,
+    // on: {
+    //   change: function (index) {
+    //     // console.log(index);
+
+    //     num.textContent = (index + 1).toString().padStart(2, "0");
+    //   },
+    // },
+  });
+}
+
 // --- Range Slider Price --------
 
 $(".range-slider").jRange({
