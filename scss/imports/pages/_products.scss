@@ -174,6 +174,8 @@
 
     &-content {
       padding-top: 100px;
+      // display: flex;
+      // flex-direction: column;
 
       // ------- TYPE -------------
 
@@ -190,6 +192,7 @@
           h3 {
             text-transform: uppercase;
             font-size: 30px;
+            white-space: nowrap;
           }
           &-tab {
             margin: 0 15px;
@@ -292,6 +295,20 @@
 
       .price {
         padding-top: 50px;
+        padding-bottom: 50px;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #cccccc;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+
         &__title {
           text-align: center;
           h5 {
@@ -319,6 +336,7 @@
             h3 {
               text-transform: uppercase;
               font-size: 40px;
+              font-family: $din;
             }
           }
 
@@ -326,6 +344,36 @@
 
           .range-price {
             width: 50%;
+
+            .theme-green {
+              .back-bar {
+                height: 2px;
+                background: $black-cl;
+
+                .selected-bar {
+                  background: $black-cl;
+                }
+
+                .pointer {
+                  top: -12px;
+                  width: 26px;
+                  height: 26px;
+                  box-sizing: border-box;
+                  border-radius: 50%;
+                  border: 6px solid #f4352c;
+                  background-color: #b41710;
+                  background-image: none;
+                }
+              }
+
+              .scale {
+                span {
+                  ins {
+                    display: none;
+                  }
+                }
+              }
+            }
           }
 
           .text-right {
@@ -342,6 +390,42 @@
             }
           }
         }
+      }
+
+      // ------- SHAPE -------------
+
+      .shape {
+        padding-top: 50px;
+        &__title {
+          @extend .price__title;
+        }
+
+        &__item {
+          @include midflex;
+          margin-top: 30px;
+          &-tab {
+            @extend .type__item-tab;
+
+            .icon img {
+              top: 10px;
+            }
+
+            h5 {
+              bottom: 0;
+            }
+          }
+        }
+      }
+
+      .btn_round {
+        width: 350px;
+        margin: 50px auto 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 25px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.4px;
       }
     }
   }
