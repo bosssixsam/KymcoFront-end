@@ -45,6 +45,45 @@ window.addEventListener("scroll", () => {
 
 // -------- product navigation --------------
 
+const proNavTab = document.querySelectorAll(".products__navigation span");
+
+const productItem = document.querySelector(".products__items");
+const productChoose = document.querySelector(".products__choose");
+
+proNavTab.forEach((proBtn) => {
+  proBtn.addEventListener("click", () => {
+    proNavTab.forEach((none) => {
+      if (none !== proBtn) {
+        none.classList.remove("selected");
+      }
+    });
+
+    proBtn.classList.add("selected");
+
+    if (
+      proBtn.classList.contains("selected") &&
+      proBtn.dataset.id === "productsItem"
+    ) {
+      // console.log("check");
+
+      if (!productItem.classList.contains("active")) {
+        productItem.classList.add("active");
+      }
+      productChoose.classList.remove("active");
+    }
+
+    if (
+      proBtn.classList.contains("selected") &&
+      proBtn.dataset.id === "productsChoose"
+    ) {
+      if (!productChoose.classList.contains("active")) {
+        productChoose.classList.add("active");
+      }
+      productItem.classList.remove("active");
+    }
+  });
+});
+
 // ---- Tab Slider -------------
 
 const tabContainer = document.querySelector(".products-content__items.slider");
@@ -52,8 +91,6 @@ const tabContainer = document.querySelector(".products-content__items.slider");
 // console.log(tabContainer.childElementCount);
 
 if (tabContainer.childElementCount > 3) {
-  console.log("hello");
-
   const flkty = new Flickity(tabContainer, {
     wrapAround: true,
     draggable: true,

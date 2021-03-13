@@ -24,7 +24,7 @@
       text-transform: uppercase;
       cursor: pointer;
 
-      &.active {
+      &.selected {
         color: $black-cl;
       }
     }
