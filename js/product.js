@@ -78,6 +78,31 @@ proNavTab.forEach((proBtn) => {
     ) {
       if (!productChoose.classList.contains("active")) {
         productChoose.classList.add("active");
+
+        // --- Range Slider Price --------
+
+        $(".range-slider").jRange({
+          from: 13500000,
+          to: 117000000,
+          step: 1,
+          scale: [13500000, 117000000],
+          format: "%s",
+          width: "100%",
+          showLabels: false,
+          isRange: true,
+        });
+
+        $(".range-slider").change(() => {
+          let min = parseInt($(".range-price .pointer-label.low").text());
+          let max = parseInt($(".range-price .pointer-label.high").text());
+
+          $(".price__content .text-left h3").html(
+            min.toLocaleString() + " VND"
+          );
+          $(".price__content .text-right h3").html(
+            max.toLocaleString() + " VND"
+          );
+        });
       }
       productItem.classList.remove("active");
     }
@@ -106,24 +131,3 @@ if (tabContainer.childElementCount > 3) {
     // },
   });
 }
-
-// --- Range Slider Price --------
-
-$(".range-slider").jRange({
-  from: 13500000,
-  to: 117000000,
-  step: 1,
-  scale: [13500000, 117000000],
-  format: "%s",
-  width: "100%",
-  showLabels: false,
-  isRange: true,
-});
-
-$(".range-slider").change(() => {
-  let min = parseInt($(".range-price .pointer-label.low").text());
-  let max = parseInt($(".range-price .pointer-label.high").text());
-
-  $(".price__content .text-left h3").html(min.toLocaleString() + " VND");
-  $(".price__content .text-right h3").html(max.toLocaleString() + " VND");
-});
