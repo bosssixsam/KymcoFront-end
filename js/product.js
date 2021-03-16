@@ -131,3 +131,26 @@ if (tabContainer.childElementCount > 3) {
     // },
   });
 }
+
+// ---------- Product POPUP ---------------------
+const popup = document.querySelector(".Productpopup");
+const itemBtn = document.querySelectorAll(".products-content__items .compare");
+const popupCloseBtn = document.querySelector(
+  ".Productpopup .popuplog .Productpopup__tab .close"
+);
+
+itemBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    popup.classList.add("active");
+  });
+});
+
+popup.addEventListener("click", () => {
+  console.log("hello");
+  popup.classList.remove("active");
+});
+
+popupCloseBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  popup.classList.remove("active");
+});
