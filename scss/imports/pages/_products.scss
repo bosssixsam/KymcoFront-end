@@ -187,6 +187,7 @@
               position: absolute;
               left: 0px;
               bottom: -10px;
+
               .btn_round {
                 font-size: 22px;
                 text-transform: uppercase;
@@ -711,12 +712,19 @@
                 width: 100px;
                 height: auto;
               }
-            }
 
-            .price {
-              span {
-                font-size: 12px;
-                white-space: nowrap;
+              .price {
+                span {
+                  font-size: 12px;
+                  white-space: nowrap;
+                }
+              }
+              .btn-group {
+                .btn_round {
+                  font-size: 14px;
+                  padding: 5px 20px;
+                  margin-bottom: 5px;
+                }
               }
             }
 
@@ -724,6 +732,10 @@
               .slider-item {
                 width: 130px;
                 height: 150px;
+                .btn-group {
+                  // bottom: 10px;
+                  left: 10px;
+                }
               }
             }
           }
