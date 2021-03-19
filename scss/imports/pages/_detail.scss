@@ -1,12 +1,152 @@
 .banner-top360 {
-  min-height: 100vh;
+  height: 100vh;
   background-image: url("../img/detail/bannerbg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+
+  .container {
+    height: 100%;
+  }
+
+  // ---- imgWarpper --------
+
+  &__imgWarpper {
+    position: relative;
+    height: 100%;
+    img {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -60px;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  // ---- 360 Button --------
+
+  .btn360 {
+    position: absolute;
+    @include midflex;
+    width: 125px;
+    height: 125px;
+    background: rgba(244, 53, 44, 0);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.8s;
+
+    &::before {
+      content: "";
+      width: 75%;
+      height: 75%;
+      border-radius: 50%;
+      background: rgba(244, 53, 44, 0.7);
+      position: absolute;
+      margin: auto;
+      z-index: 11;
+      transform: scale(1);
+      transition: all 0.3s;
+    }
+
+    img {
+      position: absolute;
+      z-index: 12;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      background: rgba(244, 53, 44, 0.6);
+      border-radius: 50%;
+      z-index: 11;
+      transform: scale(1);
+      transition: all 0.8s;
+    }
+
+    &:hover {
+      background: rgba(244, 53, 44, 0.6);
+
+      &::before {
+        transform: scale(0.9);
+        transition: all 0.3s;
+      }
+
+      &::after {
+        transform: scale(1.2);
+        background: rgba(244, 53, 44, 0);
+        transition: all 0.8s;
+      }
+    }
+  }
 
   // ------------------------ RESPONSIVE ------------------
+
+  @media screen and (max-width: 1024px) {
+    height: 80vh;
+  }
+
+  @include tablet {
+    height: 70vh;
+  }
+
   @include mobile {
-    min-height: 70vh;
+    height: 50vh;
+
+    // ---- imgWarpper --------
+
+    &__imgWarpper {
+      img {
+        bottom: -10px;
+      }
+    }
+
+    // ---- 360 Button --------
+
+    .btn360 {
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 25px;
+        height: auto;
+      }
+    }
+  }
+
+  @include mobile_lc {
+    height: 100vh;
+
+    // ---- imgWarpper --------
+
+    &__imgWarpper {
+      img {
+        bottom: -60px;
+      }
+    }
+
+    // ---- 360 Button --------
+
+    .btn360 {
+      width: 80px;
+      height: 80px;
+
+      img {
+        width: 50px;
+        height: auto;
+      }
+    }
   }
 }
 
@@ -102,6 +242,39 @@
       }
       h2 {
         font-size: 30px;
+      }
+    }
+  }
+}
+
+.color-selector {
+  &__warpper {
+    @include midflex;
+    flex-wrap: wrap;
+
+    .color-tab {
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      cursor: pointer;
+
+      &.--black {
+        background-color: $black-cl;
+      }
+
+      &.--red {
+        background-color: #f4352c;
+      }
+    }
+  }
+
+  // ------------------- RESPONSIVE ---------------
+
+  @include mobile {
+    &__warpper {
+      .color-tab {
+        width: 30px;
+        height: 30px;
       }
     }
   }
