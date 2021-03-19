@@ -42,3 +42,37 @@ window.addEventListener("scroll", () => {
     // state = false;
   }
 });
+
+// ----- COLOR SELECTOR -------------
+
+const colorBtn = document.querySelectorAll(
+  ".color-selector__warpper .color-tab"
+);
+const imgTab = document.querySelectorAll(".banner-top360__imgWarpper img");
+
+colorBtn.forEach((Colorbtn) => {
+  Colorbtn.addEventListener("click", () => {
+    colorBtn.forEach((none) => {
+      if (none !== Colorbtn) {
+        none.classList.remove("selected");
+      }
+    });
+
+    Colorbtn.classList.add("selected");
+
+    imgTab.forEach((tab) => {
+      if (
+        Colorbtn.classList.contains("selected") &&
+        tab.dataset.color === Colorbtn.dataset.color
+      ) {
+        imgTab.forEach((none) => {
+          if (none !== tab) {
+            none.classList.remove("active");
+          }
+        });
+
+        tab.classList.add("active");
+      }
+    });
+  });
+});
