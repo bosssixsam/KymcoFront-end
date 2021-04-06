@@ -76,3 +76,56 @@ colorBtn.forEach((Colorbtn) => {
     });
   });
 });
+
+// ----------- TECHNICAL QNA -------------
+
+const technicalTab = document.querySelectorAll(
+  ".technical__content .technical__content-tab "
+);
+
+technicalTab.forEach((techtab) => {
+  const tabHeader = techtab.querySelector(".tab-header");
+
+  console.log(tabHeader);
+
+  tabHeader.addEventListener("click", () => {
+    technicalTab.forEach((none) => {
+      if (none !== techtab) {
+        none.classList.remove("show");
+      }
+    });
+
+    techtab.classList.toggle("show");
+  });
+});
+
+// ------------------------- SIDE SLIDER COMPONENT --------------------------
+
+const sideSlider = document.querySelector(
+  ".side-slider .side-slider__slider .slider-container"
+);
+// const sidePreBtn = document.querySelector(".slide_btn.left");
+// const sideNextBtn = document.querySelector(".slide_btn.right");
+
+const SideSliderContainer = new Flickity(sideSlider, {
+  wrapAround: true,
+  draggable: true,
+  pageDots: false,
+  prevNextButtons: false,
+  autoPlay: 3000,
+  on: {
+    change: function (index) {
+      // console.log(index);
+      // num.textContent = (index + 1).toString().padStart(2, "0");
+      $(".mission__content-item.active").removeClass("active");
+      $(".mission__content-item").eq(index).addClass("active");
+    },
+  },
+});
+
+// next.addEventListener("click", function () {
+//   missionSlider.next(true);
+// });
+// pre.addEventListener("click", function () {
+//   missionSlider.previous(true);
+// });

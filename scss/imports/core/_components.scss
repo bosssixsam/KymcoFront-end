@@ -148,3 +148,70 @@
     }
   }
 }
+
+// ------------------- SIDE SLIDER ----------------
+
+.side-slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 455px;
+
+  // ---------- CONTENT --------------------
+
+  &__content {
+    position: relative;
+    width: 45%;
+    z-index: 5;
+
+    &-item {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 289px;
+      height: 2.5px;
+      background-color: $black-cl;
+      left: -222px;
+      top: -10px;
+    }
+  }
+
+  &__slider {
+    z-index: 2;
+    // top: 100px;
+    // right: -300px;
+    width: 55%;
+    position: relative;
+    height: 455px;
+
+    .slider-container {
+      width: 975px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 30px;
+
+      .slider-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
